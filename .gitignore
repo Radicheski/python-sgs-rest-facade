@@ -1,0 +1,5 @@
+.idea
+.stoplight
+gen
+venv
+__pycache__/

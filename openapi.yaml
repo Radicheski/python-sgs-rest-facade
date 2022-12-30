@@ -1,0 +1,320 @@
+openapi: 3.1.0
+x-stoplight:
+  id: ugf06vtsru3no
+info:
+  title: openapi.yml
+  version: '1.0'
+  description: 'https://www3.bcb.gov.br/sgspub/JSP/sgsgeral/sgsAjuda.jsp'
+servers:
+  - url: 'http://localhost:5000'
+paths:
+  /getUltimosValoresSerieVO:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WSSerieVO'
+      operationId: get-getUltimosValoresSerieVO
+      parameters:
+        - schema:
+            type: integer
+            format: int64
+          in: query
+          name: in0
+          required: true
+        - schema:
+            type: integer
+            format: int64
+          in: query
+          name: in1
+          required: true
+  /getUltimoValorVO:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WSSerieVO'
+      operationId: get-getUltimoValorVO
+      parameters:
+        - schema:
+            type: integer
+            format: int64
+          in: query
+          name: in0
+          required: true
+  /getUltimoValorXML:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: string
+      operationId: get-getUltimoValorXML
+      parameters:
+        - schema:
+            type: integer
+            format: int64
+          in: query
+          name: in0
+          required: true
+  /getValor:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Decimal'
+      operationId: get-getValor
+      parameters:
+        - schema:
+            type: integer
+            format: int64
+          in: query
+          name: in0
+          required: true
+        - schema:
+            type: string
+          in: query
+          name: in1
+          required: true
+  /getValorEspecial:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Decimal'
+      operationId: get-getValorEspecial
+      parameters:
+        - schema:
+            type: integer
+            format: int64
+          in: query
+          name: in0
+          required: true
+        - schema:
+            type: string
+          in: query
+          name: in1
+          required: true
+        - schema:
+            type: string
+          in: query
+          name: in2
+          required: true
+  /getValoresSeriesVO:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/WSSerieVO'
+      operationId: get-getValoresSeriesVO
+      parameters:
+        - schema:
+            type: array
+          in: query
+          name: in0
+          required: true
+        - schema:
+            type: string
+          in: query
+          name: in1
+          required: true
+        - schema:
+            type: string
+          in: query
+          name: in2
+          required: true
+  /getValoresSeriesXML:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: string
+      operationId: get-getValoresSeriesXML
+      parameters:
+        - schema:
+            type: array
+          in: query
+          name: in0
+          required: true
+        - schema:
+            type: string
+          in: query
+          name: in1
+          required: true
+        - schema:
+            type: string
+          in: query
+          name: in2
+          required: true
+components:
+  schemas:
+    Decimal:
+      title: Decimal
+      x-stoplight:
+        id: pf5mxri05570n
+      type:
+        - string
+        - 'null'
+    WSSerieVO:
+      title: WSSerieVO
+      x-stoplight:
+        id: yefdlwy3bnhr0
+      type: object
+      properties:
+        anoFim:
+          type: integer
+          format: int32
+        anoInicio:
+          type: integer
+          format: int32
+        aviso:
+          type:
+            - string
+            - 'null'
+        diaFim:
+          type: integer
+          format: int32
+        diaInicio:
+          type: integer
+          format: int32
+        especial:
+          type: boolean
+        fonte:
+          type:
+            - string
+            - 'null'
+        fullName:
+          type:
+            - string
+            - 'null'
+        gestorProprietario:
+          type:
+            - string
+            - 'null'
+        mesFim:
+          type: integer
+          format: int32
+        mesInicio:
+          type: integer
+          format: int32
+        nomeAbreviado:
+          type:
+            - string
+            - 'null'
+        nomeCompleto:
+          type:
+            - string
+            - 'null'
+        oid:
+          type: integer
+          format: int64
+        periodicidade:
+          type:
+            - string
+            - 'null'
+        periodicidadeSigla:
+          type:
+            - string
+            - 'null'
+        possuiBloqueios:
+          type: boolean
+        publica:
+          type: boolean
+        shortName:
+          type:
+            - string
+            - 'null'
+        ultimoValor:
+          $ref: '#/components/schemas/WSValorSerieVO'
+        unidadePadrao:
+          type:
+            - string
+            - 'null'
+        unidadePadraoIngles:
+          type:
+            - string
+            - 'null'
+        valorDiaNaoUtil:
+          type: boolean
+        valores:
+          type:
+            - array
+            - 'null'
+          items: {}
+    WSValorSerieVO:
+      title: WSValorSerieVO
+      x-stoplight:
+        id: a7f41ls6i5mek
+      type: object
+      properties:
+        ano:
+          type: integer
+          format: int32
+        anoFim:
+          type: integer
+          format: int32
+        bloqueado:
+          type: boolean
+        bloqueioLiberado:
+          type: boolean
+        dia:
+          type: integer
+          format: int32
+        diaFim:
+          type: integer
+          format: int32
+        mes:
+          type: integer
+          format: int32
+        mesFim:
+          type: integer
+          format: int32
+        oid:
+          type: integer
+          format: int64
+        oidSerie:
+          type: integer
+          format: int64
+        svalor:
+          type:
+            - string
+            - 'null'
+        valor:
+          $ref: '#/components/schemas/Decimal'
+  examples: {}
